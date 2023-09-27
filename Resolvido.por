@@ -8,30 +8,24 @@ programa {
   inteiro nota
 
   funcao inicio() {
-
     apresentacao()
     questionarioEspecialidade()
     agenda()
     chamadaDeVideo()
     vendaDispositivo()
     avaliacao()
-
   }
 
   funcao apresentacao() {
-
     escreva("Olá, Seja bem-vindo à Back Clinic \n")
     escreva("\n")
     escreva("Por favor, digite o nome do paciente: ")
     leia(nomePaciente)
-
     escreva("Digite a idade do paciente: ")
     leia(idadePaciente)
-
   }
 
   funcao questionarioEspecialidade() {
-
     escreva("\n")
     escreva("Escolha a especialidade médica: \n")
     escreva("1 - Médico Geral \n")
@@ -46,15 +40,11 @@ programa {
     escreva("10 - Neurologia \n")
     escreva("Opção: ")
     leia(especialidade)
-
     verificarValidadeOpcao()
-
   }
 
   funcao verificarValidadeOpcao() {
-
     faca {
-
       escolha (especialidade) {
         caso 1:
           nomeEspecialidade = "Médico Geral"
@@ -101,13 +91,10 @@ programa {
           opcao = "invalido"
           questionarioEspecialidade()
       }
-
     } enquanto (opcao == "invalido")
-
   }
 
   funcao agenda() {
-
     escreva("\nEscolha o dia da consulta: \n")
     escreva("1 - Segunda-feira \n")
     escreva("2 - Terça-feira \n")
@@ -116,15 +103,11 @@ programa {
     escreva("5 - Sexta-feira \n")
     escreva("Opção: ")
     leia(diaConsulta)
-
     verificarAgenda()
-
   }
 
   funcao verificarAgenda() {
-
     faca {
-
       escolha(diaConsulta) {
         caso 1:
           horario = "10:00 - 11:00"
@@ -161,27 +144,20 @@ programa {
             opcao = "invalido"
             agenda()
       }
-
     } enquanto (opcao == "invalido")
   }
 
   funcao chamadaDeVideo() {
-
     escreva("\nNome do paciente: ", nomePaciente)
     escreva("\nIdade do paciente: ", idadePaciente)
     escreva("\nDia da consulta: ", dataConsulta)
-
     escreva("\nDeseja um telediagnóstico? Digite 1 para sim, e 2 para não: ")
     leia(opcaoTelediagnostico)
-
     verificarChamadaDeVideo()
-
   }
 
   funcao verificarChamadaDeVideo() {
-
     faca {
-
       escolha(opcaoTelediagnostico) {
         caso 1:
           escreva("\nVocê optou pelo telediagnóstico. Um médico entrará em contato com você em breve. \n")
@@ -199,25 +175,17 @@ programa {
             opcao = "invalido"
             chamadaDeVideo()
       }
-
-    } enquanto (opcao == "invalido")
-  
+    } enquanto (opcao == "invalido") 
   }
 
   funcao questionarioConfirmarAgenda() {
-
     escreva("\nDeseja confirmar o atendimento presencial? Digite 1 para sim, e 2 para não: ")
     leia(confirmaAtendimento)
-
     verificarConfirmarAgenda()
-
   }
 
-
   funcao verificarConfirmarAgenda() {
-
     faca {
-
       escolha (confirmaAtendimento) {
         caso 1:
           escreva("\nCartão de Confirmação de Consulta: \n")
@@ -225,11 +193,9 @@ programa {
           escreva("\nEspecialidade: ", nomeEspecialidade)
           escreva("\nDia da consulta: ", dataConsulta)
           escreva("\nHorário: ", horario, "\n")
-
           pagarConsulta()
           verificarPagamentoConsulta()
           emitirArquivo()
-
           opcao = "valido"
           pare
         caso 2:
@@ -241,13 +207,10 @@ programa {
             opcao = "invalido"
             questionarioConfirmarAgenda()
       }
-
     } enquanto (opcao == "invalido")
-
   }
-
+  
   funcao pagarConsulta() {
-
     escreva("\nFormas de pagamento:\n")
     escreva("1 - Dinheiro \n")
     escreva("2 - Cartão de Crédito \n")
@@ -255,13 +218,10 @@ programa {
     escreva("4 - Plano de Saúde \n")
     escreva("Opção de pagamento: ")
     leia(formaPagamento)
-
   }
 
   funcao verificarPagamentoConsulta() {
-
     faca {
-
       escolha(formaPagamento) {
         caso 1:
           escreva("\nPagamento em dinheiro. \n")
@@ -284,26 +244,20 @@ programa {
           opcao = "invalido"
           pagarConsulta()
       }
-
     } enquanto(opcao == "invalido")
-
     consultarProntuario()
   }
 
   funcao consultarProntuario() {
-
     se (nomeEspecialidade == "Médico Geral" ou nomeEspecialidade == "Cardiologia") {
 	    escreva("\nVocê deseja acessar o prontuário eletrônico? Digite 1 para sim, e 2 para não: ")
 	    leia(prontuario)
 	    verificarConsultarProntuario()
     }
-
   }
 
-  funcao verificarConsultarProntuario() {
-    
+  funcao verificarConsultarProntuario() { 
     faca {
-
       escolha (prontuario) {
         caso 1:
           escreva("\nProntuário Eletrônico de ", nomePaciente, ":")
@@ -323,24 +277,17 @@ programa {
           opcao = "invalido"
           consultarProntuario()
       }
-
     } enquanto (opcao == "invalido")
-
   }
 
   funcao vendaDispositivo() {
-
     escreva("\nDeseja comprar um dispositivo de monitoramento de saúde? Digite 1 para sim, e 2 para não: ")
     leia(opcaoCompra)
-
     verificarVendaDispositivo()
-
   }
 
   funcao verificarVendaDispositivo() {
-
     faca {
-
       escolha(opcaoCompra) {
         caso 1:
           escreva("\nDispositivo de Monitoramento de Saúde adicionado ao carrinho.")
@@ -356,45 +303,33 @@ programa {
           escreva("\nOpção digitada é invalida. \n")
           opcao = "invalido"
           vendaDispositivo()
-      }
-    
+      } 
     } enquanto (opcao == "invalido")
-
   }
 
   funcao emitirArquivo() {
-
   	cadeia caminho ="./dadosDoPaciente"
   	inteiro memoriaArmazenamento = arquivoPaciente.abrir_arquivo(caminho, arquivoPaciente.MODO_ESCRITA)
-	
-
   	arquivoPaciente.escrever_linha("Nome do paciente: "+nomePaciente, memoriaArmazenamento)
+  	arquivoPaciente.escrever_linha("Idade paciente: "+idadePaciente+" anos", memoriaArmazenamento)
   	arquivoPaciente.escrever_linha("Especialidade: "+nomeEspecialidade, memoriaArmazenamento)
   	arquivoPaciente.escrever_linha("Data da consulta: "+dataConsulta, memoriaArmazenamento)
   	arquivoPaciente.escrever_linha("Horario: "+horario, memoriaArmazenamento)
-
 	arquivoPaciente.fechar_arquivo(memoriaArmazenamento)
-
 	escreva("\nFicha do paciente gerada com sucesso.\n")
-
   }
 
   funcao avaliacao() {
-
   	escreva("\nObrigado por marcar a sua consulta com a Back Clinic.\n")
 	escreva("A sua avaliação é muito importante para nós.\n")
 	escreva("Em uma nota de 0 a 5, onde 0 é muito insatisfeito e 5 totalmente satisfeito. ")
 	escreva("Qual nota você daria para a facilidade do nosso menu?\n")
 	leia(nota)
-
-	verificarAvaliacao()
-  	
+	verificarAvaliacao() 	
   }
 
   funcao verificarAvaliacao() {
-
   	faca {
-
       escolha(nota) {
         caso 0:
           escreva("\nFico triste em saber que ficou totalmente insatisfeito, perdão.\n")
@@ -426,21 +361,16 @@ programa {
           escreva("\nOpção digitada é invalida. \n")
           opcao = "invalido"
           avaliacao()
-      }
-    
+      }  
     } enquanto (opcao == "invalido")
-  
   }
-
-
 }
-
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 10013; 
+ * @POSICAO-CURSOR = 477; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
