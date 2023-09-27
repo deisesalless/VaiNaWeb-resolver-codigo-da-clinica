@@ -161,6 +161,7 @@ programa {
       escolha(opcaoTelediagnostico) {
         caso 1:
           escreva("\nVocê optou pelo telediagnóstico. Um médico entrará em contato com você em breve. \n")
+          pagarConsulta()
           emitirArquivo()
           opcao = "valido"
           pare
@@ -218,6 +219,7 @@ programa {
     escreva("4 - Plano de Saúde \n")
     escreva("Opção de pagamento: ")
     leia(formaPagamento)
+    verificarPagamentoConsulta()
   }
 
   funcao verificarPagamentoConsulta() {
@@ -370,7 +372,7 @@ programa {
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 477; 
+ * @POSICAO-CURSOR = 4755; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
